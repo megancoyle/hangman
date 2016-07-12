@@ -4,6 +4,7 @@ var canvas = document.getElementById("myCanvas");
 // moveTo(x,y) - defines the starting point of the line
 // lineTo(x,y) - defines the ending point of the line
 var platform1 = canvas.getContext("2d");
+platform1.lineWidth=5;
 platform1.moveTo(5, 290);
 platform1.lineTo(250, 290);
 platform1.stroke();
@@ -14,8 +15,8 @@ platform2.lineTo(30, 290);
 platform2.stroke();
 
 var platform3 = canvas.getContext("2d");
-platform3.moveTo(30, 6);
-platform3.lineTo(150, 6);
+platform3.moveTo(27, 6);
+platform3.lineTo(153, 6);
 platform3.stroke();
 
 var platform4 = canvas.getContext("2d");
