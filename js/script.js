@@ -40,6 +40,10 @@ function startGame(){
       //     selectedWord.innerHTML = guess;
       //   }
       // }
+
+      // keep track of the number of guesses
+      numberOfGuesses++;
+      // console.log(numberOfGuesses);
       maskWord();
     }
 }
@@ -49,11 +53,31 @@ function startGame(){
 
 function maskWord() {
   // loop through guesses
-  for (i = 0; i < guesses.length; i++) {
+
   // see if they match letters in word
-    if (word.includes(guesses[i])); {
-      console.log("yes");
+  for (i = 0; i < word.length; i++) {
+    if (guess == word[i]) {
+        console.log(guess);
+    } else {
+      console.log("_");
     }
+  }
+  // create placeholder for word
+  // for (i = 0; i < word.length; i++) {
+  //   selectedWord.innerHTML = selectedWord.innerHTML + '_';
+  // }
+
+    // if (word.includes(compareCurrentGuess)) {
+    //
+    //   console.log(compareCurrentGuess);
+    // }
+    // else if (!word.includes(currentGuess)) {
+    //   console.log("nope");
+    // }
+    // else {
+    //   console.log("nope");
+    // }
+  // }
   // if so print the letters, otherwise print _
 
 // }
@@ -61,8 +85,7 @@ function maskWord() {
   //   if (guess == word[i]) {
   //
   //   }
-  }
-
+  // }
 }
 
 // var letterGuess = prompt("guess!");
