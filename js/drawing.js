@@ -5,6 +5,7 @@ var canvas = document.getElementById("myCanvas");
 // lineTo(x,y) - defines the ending point of the line
 var platform1 = canvas.getContext("2d");
 platform1.lineWidth=5;
+platform1.strokeStyle="white";
 platform1.moveTo(5, 290);
 platform1.lineTo(210, 290);
 platform1.stroke();
