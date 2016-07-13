@@ -1,12 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:400,700);
 
 body {
-  background-color: #0099ff;
+  background-color: #b30086;
   color: white;
 }
 h1 {
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  font-size: 4em;
 }
 main {
   max-width: 850px;
