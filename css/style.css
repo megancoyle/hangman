@@ -1,6 +1,11 @@
 h1 {
   text-align: center;
 }
+main {
+  max-width: 850px;
+  text-align: center;
+  margin: 0 auto;
+}
 #alphabet-buttons li {
     display: inline-block;
     margin: 10px;
@@ -8,13 +13,16 @@ h1 {
     padding: 10px 15px;
     border-radius: 3px;
 }
-#alphabet-buttons {
-    max-width: 800px;
-    margin: 0 auto;
-}
 
 #myCanvas {
     margin: 0 auto;
     width: 300px;
     display: block;
+    margin-top: 20px;
+}
+#selected-word {
+  padding: 10px;
+  text-align: center;
+  letter-spacing: 0.8em;
+  font-size: 20px;
 }
