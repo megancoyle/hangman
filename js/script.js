@@ -1,20 +1,47 @@
 // store alphabet
 var alphabet = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-// create buttons for alphabet
-for (i = 0; i < alphabet.length; i++) {
-  var alphabetBtn = document.getElementById("alphabet-buttons");
-  alphabetBtn.innerHTML = alphabetBtn.innerHTML + '<li>' + alphabet[i] +'</li>';
-}
-
+var numberOfGuesses = 0;
 // store word
 // var word = prompt("Player 1, pick a word!");
 var word = "pizza";
+var selectedWord = document.getElementById("selected-word");
 
-// create placeholder _ for word
-for (i = 0; i < word.length; i++) {
-  var selectedWord = document.getElementById("selected-word");
-  selectedWord.innerHTML = selectedWord.innerHTML + '_';
+
+startGame();
+
+function startGame(){
+  // create buttons for alphabet
+  for (i = 0; i < alphabet.length; i++) {
+    var alphabetBtns = document.getElementById("alphabet-buttons");
+    alphabetBtns.innerHTML = alphabetBtns.innerHTML + '<li>' + alphabet[i] +'</li>';
+  }
+
+  // create placeholder for word
+  for (i = 0; i < word.length; i++) {
+    selectedWord.innerHTML = selectedWord.innerHTML + '_';
+  }
+
+  // user guesses a letter by clicking on an letter button
+  var btns = document.getElementById("selected-word").getElementsByTagName('li');
+  btns.onclick = function () {
+    // var guess = (this.innerHTML);
+    // for (i = 0; i < word.length; i++) {
+    //   if (guess == word[i]) {
+    //     console.log(word[i]);
+    //
+    //   }
+    // }
+  }
+}
+
+// var letterGuess = prompt("guess!");
+// checkLetterInWord(letterGuess);
+function guessLetter() {
+  console.log("hello");
+  // var guess = (_this.innerHTML);
+  // console.log(guess);
+
 }
 
 // store a hint
