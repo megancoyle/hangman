@@ -6,6 +6,7 @@ var numberOfGuesses = 0;
 // var word = prompt("Player 1, pick a word!");
 var word = "pizza";
 var hiddenWord;
+var letterShowing;
 
 var selectedWord = document.getElementById("selected-word");
 var guesses = [];
@@ -56,33 +57,22 @@ String.prototype.replaceAt = function(index, character) {
   return this.substr(0, index) + character + this.substr(index+character.length);
 }
 
-// function that masks word
-// on click it triggers, if a guess is made it will print out the guess in place of the letter, otherwise it will print an underscore
-// all the function knows about is the word and what has been guessed
-
 function maskWord() {
   // loop through word
   for (i = 0; i < word.length; i++) {
     // if the last item in the guesses array is in the word
     if (guesses[guesses.length-1] == word[i]) {
       // replace the letter where it appears in the word
-      var letterShowing = hiddenWord.replaceAt(i, word[i]);
-      console.log(letterShowing);
-
-      // var replaceHiddenWord = hiddenWord.replace(hiddenWord[i], word[i])
-      // console.log(hiddenWord);
-      // selectedWord.innerHTML = hiddenWord;
+      letterShowing = hiddenWord.replaceAt(i, word[i]);
     }
   }
-  // see if last guess in guesses array matches letter in word
-  // replace underscore with same index in hiddenWord as word index with actual letter
-  // if so print the letters, otherwise print _
+  selectedWord.innerHTML = letterShowing;
 }
 
 // store a hint
 // if hint is used, an element is drawn
 
-// user has eleven guesses
+// set limit for user
 
 // convert alphabet to clickable text
 
