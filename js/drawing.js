@@ -6,7 +6,7 @@ var canvas = document.getElementById("myCanvas");
 var platform1 = canvas.getContext("2d");
 platform1.lineWidth=5;
 platform1.moveTo(5, 290);
-platform1.lineTo(250, 290);
+platform1.lineTo(210, 290);
 platform1.stroke();
 
 var platform2 = canvas.getContext("2d");
