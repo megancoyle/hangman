@@ -6,6 +6,7 @@ var numberOfGuesses = 0;
 // var word = prompt("Player 1, pick a word!");
 var word = "pizza";
 var selectedWord = document.getElementById("selected-word");
+var guesses = [];
 
 
 startGame();
@@ -32,23 +33,35 @@ function startGame(){
   alphabetBtns.onclick = function(event) {
       var target = getEventTarget(event);
       var guess = (target.innerHTML);
-      console.log("clicked!" + guess);
-      for (i = 0; i < word.length; i++) {
-        if (guess == word[i]) {
-          // selectedWord.replace(selectedWord[i], guess);
-          selectedWord.innerHTML = guess;
-        }
-      }
+      guesses.push(guess);
+      // for (i = 0; i < word.length; i++) {
+      //   if (guess == word[i]) {
+      //     // selectedWord.replace(selectedWord[i], guess);
+      //     selectedWord.innerHTML = guess;
+      //   }
+      // }
+      maskWord();
     }
-
 }
-
 // function that masks word
 // on click it triggers, if a guess is made it will print out the guess in place of the letter, otherwise it will print an underscore
 // all the function knows about is the word and what has been guessed
 
 function maskWord() {
-  var alphabetBtns = document.getElementById("alphabet-buttons");
+  // loop through guesses
+  for (i = 0; i < guesses.length; i++) {
+  // see if they match letters in word
+    if (word.includes(guesses[i])); {
+      console.log("yes");
+    }
+  // if so print the letters, otherwise print _
+
+// }
+  // for (i = 0; i < word.length; i++) {
+  //   if (guess == word[i]) {
+  //
+  //   }
+  }
 
 }
 
