@@ -33,7 +33,6 @@ function startGame(){
       var target = getEventTarget(event);
       var guess = (target.innerHTML);
       console.log("clicked!" + guess);
-      // document.getElementsByTagName("li").className = " active";
       for (i = 0; i < word.length; i++) {
         if (guess == word[i]) {
           // selectedWord.replace(selectedWord[i], guess);
@@ -41,6 +40,15 @@ function startGame(){
         }
       }
     }
+
+}
+
+// function that masks word
+// on click it triggers, if a guess is made it will print out the guess in place of the letter, otherwise it will print an underscore
+// all the function knows about is the word and what has been guessed
+
+function maskWord() {
+  var alphabetBtns = document.getElementById("alphabet-buttons");
 
 }
 
