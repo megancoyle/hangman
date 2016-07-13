@@ -5,9 +5,11 @@ var numberOfGuesses = 0;
 // store word
 // var word = prompt("Player 1, pick a word!");
 var word = "pizza";
+var hiddenWord;
+
 var selectedWord = document.getElementById("selected-word");
 var guesses = [];
-
+var score = document.getElementById("score");
 
 startGame();
 
@@ -22,6 +24,7 @@ function startGame(){
   for (i = 0; i < word.length; i++) {
     selectedWord.innerHTML = selectedWord.innerHTML + '_';
   }
+  hiddenWord = selectedWord.innerText;
 
   // event listener for each specific alphabet button
   function getEventTarget(e) {
@@ -43,59 +46,38 @@ function startGame(){
 
       // keep track of the number of guesses
       numberOfGuesses++;
-      // console.log(numberOfGuesses);
+      score.innerHTML = numberOfGuesses;
       maskWord();
     }
 }
+
+// replacing an index of a string with a specific character
+String.prototype.replaceAt = function(index, character) {
+  return this.substr(0, index) + character + this.substr(index+character.length);
+}
+
 // function that masks word
 // on click it triggers, if a guess is made it will print out the guess in place of the letter, otherwise it will print an underscore
 // all the function knows about is the word and what has been guessed
 
 function maskWord() {
-  // loop through guesses
-
-  // see if they match letters in word
+  // loop through word
   for (i = 0; i < word.length; i++) {
-    if (guess == word[i]) {
-        console.log(guess);
-    } else {
-      console.log("_");
+    // if the last item in the guesses array is in the word
+    if (guesses[guesses.length-1] == word[i]) {
+      // replace the letter where it appears in the word
+      var letterShowing = hiddenWord.replaceAt(i, word[i]);
+      console.log(letterShowing);
+
+      // var replaceHiddenWord = hiddenWord.replace(hiddenWord[i], word[i])
+      // console.log(hiddenWord);
+      // selectedWord.innerHTML = hiddenWord;
     }
   }
-  // create placeholder for word
-  // for (i = 0; i < word.length; i++) {
-  //   selectedWord.innerHTML = selectedWord.innerHTML + '_';
-  // }
-
-    // if (word.includes(compareCurrentGuess)) {
-    //
-    //   console.log(compareCurrentGuess);
-    // }
-    // else if (!word.includes(currentGuess)) {
-    //   console.log("nope");
-    // }
-    // else {
-    //   console.log("nope");
-    // }
-  // }
+  // see if last guess in guesses array matches letter in word
+  // replace underscore with same index in hiddenWord as word index with actual letter
   // if so print the letters, otherwise print _
-
-// }
-  // for (i = 0; i < word.length; i++) {
-  //   if (guess == word[i]) {
-  //
-  //   }
-  // }
 }
-
-// var letterGuess = prompt("guess!");
-// checkLetterInWord(letterGuess);
-// function guessLetter() {
-//   console.log("hello");
-//   // var guess = (_this.innerHTML);
-//   // console.log(guess);
-//
-// }
 
 // store a hint
 // if hint is used, an element is drawn
