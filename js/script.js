@@ -1,6 +1,6 @@
 // store alphabet
 var alphabet = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
+// need to track this throughout game
 var numberOfGuesses = 0;
 // store word
 // var word = prompt("Player 1, pick a word!");
@@ -33,10 +33,11 @@ function startGame(){
       var target = getEventTarget(event);
       var guess = (target.innerHTML);
       console.log("clicked!" + guess);
+      // document.getElementsByTagName("li").className = " active";
       for (i = 0; i < word.length; i++) {
         if (guess == word[i]) {
           // selectedWord.replace(selectedWord[i], guess);
-
+          selectedWord.innerHTML = guess;
         }
       }
     }
