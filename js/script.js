@@ -22,27 +22,35 @@ function startGame(){
     selectedWord.innerHTML = selectedWord.innerHTML + '_';
   }
 
-  // user guesses a letter by clicking on an letter button
-  var btns = document.getElementById("selected-word").getElementsByTagName('li');
-  btns.onclick = function () {
-    // var guess = (this.innerHTML);
-    // for (i = 0; i < word.length; i++) {
-    //   if (guess == word[i]) {
-    //     console.log(word[i]);
-    //
-    //   }
-    // }
+  // event listener for each specific alphabet button
+  function getEventTarget(e) {
+      e = e || window.event;
+      return e.target || e.srcElement;
   }
+
+  // user guesses a letter by clicking on an letter button
+  alphabetBtns.onclick = function(event) {
+      var target = getEventTarget(event);
+      var guess = (target.innerHTML);
+      console.log("clicked!" + guess);
+      for (i = 0; i < word.length; i++) {
+        if (guess == word[i]) {
+          // selectedWord.replace(selectedWord[i], guess);
+
+        }
+      }
+    }
+
 }
 
 // var letterGuess = prompt("guess!");
 // checkLetterInWord(letterGuess);
-function guessLetter() {
-  console.log("hello");
-  // var guess = (_this.innerHTML);
-  // console.log(guess);
-
-}
+// function guessLetter() {
+//   console.log("hello");
+//   // var guess = (_this.innerHTML);
+//   // console.log(guess);
+//
+// }
 
 // store a hint
 // if hint is used, an element is drawn
