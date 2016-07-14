@@ -6,7 +6,7 @@ var numberOfGuesses = 0;
 // var word = prompt("Player 1, pick a word!");
 var word = "pizza";
 var hiddenWord;
-var letterShowing;
+var updateHiddenWord;
 
 var selectedWord = document.getElementById("selected-word");
 var guesses = [];
@@ -60,13 +60,22 @@ String.prototype.replaceAt = function(index, character) {
 function maskWord() {
   // loop through word
   for (i = 0; i < word.length; i++) {
-    // if the last item in the guesses array is in the word
-    if (guesses[guesses.length-1] == word[i]) {
-      // replace the letter where it appears in the word
-      letterShowing = hiddenWord.replaceAt(i, word[i]);
-    }
+    console.log(guesses[i]);
+
+    // for (i = 0; i < guesses.length; i++) {
+    //   if (guesses[i] == word[i]) {
+    //     // replace the letter where it appears in the word
+    //     updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
+    //     console.log(updateHiddenWord);
+    //   }
+    // }
+
+    // if (guesses[guesses.length-1] == word[i]) {
+    // replace the letter where it appears in the word
+    // updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
+    //   selectedWord.innerHTML = updateHiddenWord;
+    // }
   }
-  selectedWord.innerHTML = letterShowing;
 }
 
 // store a hint
