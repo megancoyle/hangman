@@ -58,15 +58,33 @@ String.prototype.replaceAt = function(index, character) {
 }
 
 function maskWord() {
-  // loop through word
-    for (i = 0; i < word.length; i++) {
-    if (guesses[guesses.length-1] == word[i]) {
-    // replace the letter where it appears in the word
-    updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
-      selectedWord.innerHTML = updateHiddenWord;
-    }
+  // loop through guesses
+  // for (i = 0; i < guesses.length; i++) {
+  //   var guess = guesses[i];
+  //   if (word.indexOf(guess) > -1) {
+  //     updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
+  //     selectedWord.innerHTML = updateHiddenWord;
+  //   }
+  // }
+
+  for (i = 0; i < word.length; i++) {
+    // turn guesses array into a string
+    var guessString = guesses.join("");
+    var regexp = new RegExp('[^' + guessString + ']','g');
+    var display = word.replace(regexp, '_');
+    selectedWord.innerHTML = display;
   }
 }
+
+  // // loop through word - this was working somewhat, was overriding html though
+  //   for (i = 0; i < word.length; i++) {
+  //   if (guesses[guesses.length-1] == word[i]) {
+  //   // replace the letter where it appears in the word
+  //   updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
+  //     selectedWord.innerHTML = updateHiddenWord;
+  //   }
+  // }
+// }
 
 // store a hint
 // if hint is used, an element is drawn
