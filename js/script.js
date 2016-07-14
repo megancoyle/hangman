@@ -10,6 +10,8 @@ var updateHiddenWord;
 
 var selectedWord = document.getElementById("selected-word");
 var guesses = [];
+var keepScore = [];
+var lives = 12;
 var score = document.getElementById("score");
 
 startGame();
@@ -38,17 +40,13 @@ function startGame(){
       var target = getEventTarget(event);
       var guess = (target.innerHTML);
       guesses.push(guess);
-      // for (i = 0; i < word.length; i++) {
-      //   if (guess == word[i]) {
-      //     // selectedWord.replace(selectedWord[i], guess);
-      //     selectedWord.innerHTML = guess;
-      //   }
-      // }
+      keepScore.push(guess);
 
       // keep track of the number of guesses
       numberOfGuesses++;
       score.innerHTML = numberOfGuesses;
       maskWord();
+      evaluateGuess();
     }
 }
 
@@ -58,15 +56,6 @@ String.prototype.replaceAt = function(index, character) {
 }
 
 function maskWord() {
-  // loop through guesses
-  // for (i = 0; i < guesses.length; i++) {
-  //   var guess = guesses[i];
-  //   if (word.indexOf(guess) > -1) {
-  //     updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
-  //     selectedWord.innerHTML = updateHiddenWord;
-  //   }
-  // }
-
   for (i = 0; i < word.length; i++) {
     // turn guesses array into a string
     var guessString = guesses.join("");
@@ -76,15 +65,40 @@ function maskWord() {
   }
 }
 
-  // // loop through word - this was working somewhat, was overriding html though
-  //   for (i = 0; i < word.length; i++) {
-  //   if (guesses[guesses.length-1] == word[i]) {
-  //   // replace the letter where it appears in the word
-  //   updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
-  //     selectedWord.innerHTML = updateHiddenWord;
-  //   }
-  // }
-// }
+function evaluateGuess() {
+  var guess = keepScore.pop();
+  if (word.indexOf(guess) >-1) {
+    console.log("right!");
+  } else {
+    lives--;
+    if (lives == 11) {
+      frame1();
+    } else if (lives == 10) {
+      frame2();
+    } else if (lives == 9) {
+      frame3();
+    } else if (lives == 8) {
+      frame4();
+    } else if (lives == 7) {
+      frame5();
+    } else if (lives == 6) {
+      frame6();
+    } else if (lives == 5) {
+      frame7();
+    } else if (lives == 4) {
+      frame8();
+    } else if (lives == 3) {
+      frame9();
+    } else if (lives == 2) {
+      frame10();
+    } else if (lives == 1) {
+      frame11();
+    } else {
+      console.log("game over");
+    }
+  }
+}
+
 
 // store a hint
 // if hint is used, an element is drawn
