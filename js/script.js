@@ -59,22 +59,12 @@ String.prototype.replaceAt = function(index, character) {
 
 function maskWord() {
   // loop through word
-  for (i = 0; i < word.length; i++) {
-    console.log(guesses[i]);
-
-    // for (i = 0; i < guesses.length; i++) {
-    //   if (guesses[i] == word[i]) {
-    //     // replace the letter where it appears in the word
-    //     updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
-    //     console.log(updateHiddenWord);
-    //   }
-    // }
-
-    // if (guesses[guesses.length-1] == word[i]) {
+    for (i = 0; i < word.length; i++) {
+    if (guesses[guesses.length-1] == word[i]) {
     // replace the letter where it appears in the word
-    // updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
-    //   selectedWord.innerHTML = updateHiddenWord;
-    // }
+    updateHiddenWord = hiddenWord.replaceAt(i, word[i]);
+      selectedWord.innerHTML = updateHiddenWord;
+    }
   }
 }
 
