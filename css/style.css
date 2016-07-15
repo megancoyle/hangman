@@ -8,6 +8,8 @@ h1 {
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 4em;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 main {
   max-width: 850px;
@@ -17,15 +19,15 @@ main {
 #alphabet-buttons li {
     display: inline-block;
     margin: 10px;
-    border: 1px solid white;;
+    border: 1px solid white;
     padding: 10px 15px;
     border-radius: 3px;
     cursor: pointer;
 }
 
 .active {
-  color: white;
-  background: black;
+  color: #b30086;
+  background: white;
 }
 
 #myCanvas {
