@@ -43,6 +43,8 @@ function startGame(){
       if ((event.target.tagName.toLowerCase() === 'li')) {
         var guess = (target.innerText);
         target.setAttribute("class", "active");
+        // disable click event after guess is selected
+        target.style.pointerEvents = 'none';
         guesses.push(guess);
         keepScore.push(guess);
 

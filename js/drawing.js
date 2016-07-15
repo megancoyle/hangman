@@ -3,6 +3,7 @@ var canvas = document.getElementById("myCanvas");
 
 // moveTo(x,y) - defines the starting point of the line
 // lineTo(x,y) - defines the ending point of the line
+
 function frame1(){
   var platform1 = canvas.getContext("2d");
   platform1.lineWidth=5;
