@@ -34,22 +34,24 @@ function startGame(){
       return e.target;
   }
 
-
-
   // user guesses a letter by clicking on an letter button
   alphabetBtns.onclick = function(event) {
       var target = getEventTarget(event);
-      var guess = (target.innerHTML);
-      target.setAttribute("class", "active");
-      guesses.push(guess);
-      keepScore.push(guess);
+      // make sure target clicked is li
+      if ((event.target.tagName.toLowerCase() === 'li')) {
+        var guess = (target.innerText);
+        target.setAttribute("class", "active");
+        guesses.push(guess);
+        keepScore.push(guess);
 
-      // keep track of the number of guesses
-      numberOfGuesses++;
-      score.innerHTML = numberOfGuesses;
-      maskWord();
-      evaluateGuess();
+        // keep track of the number of guesses
+        numberOfGuesses++;
+        score.innerHTML = numberOfGuesses;
+        maskWord();
+        evaluateGuess();
+      }
     }
+
 }
 
 // replacing an index of a string with a specific character
