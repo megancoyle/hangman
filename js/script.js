@@ -11,6 +11,7 @@ var updateHiddenWord;
 var selectedWord = document.getElementById("selected-word");
 var guesses = [];
 var keepScore = [];
+// set limit for user
 var lives = 12;
 var score = document.getElementById("score");
 
@@ -34,7 +35,7 @@ function startGame(){
       return e.target;
   }
 
-  // user guesses a letter by clicking on an letter button
+  // user guesses a letter by clicking on a letter button
   alphabetBtns.onclick = function(event) {
       var target = getEventTarget(event);
       // make sure target clicked is li
@@ -60,8 +61,10 @@ String.prototype.replaceAt = function(index, character) {
 }
 
 function maskWord() {
+  // for each guess, check if it matches letter in word
   for (i = 0; i < word.length; i++) {
     // turn guesses array into a string
+    // update correct letter in masked word
     var guessString = guesses.join("");
     var regexp = new RegExp('[^' + guessString + ']','g');
     var display = word.replace(regexp, '_');
@@ -69,6 +72,7 @@ function maskWord() {
   }
 }
 
+// on each frame, run animation of hangman
 function evaluateGuess() {
   var guess = keepScore.pop();
   if (word.indexOf(guess) >-1) {
@@ -102,19 +106,6 @@ function evaluateGuess() {
   }
 }
 
-
 // store a hint
 // if hint is used, an element is drawn
-
-// set limit for user
-
-// convert alphabet to clickable text
-
-  // way to compare word to guesses
-  // guesses = when user clicks on a specific letter
-
-// for each guess, check if it matches letter in word
-  // if matches, show word
-  // else, draw Hangman
-
-// on each frame, run animation
+// way to compare word to guesses
