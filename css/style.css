@@ -29,6 +29,10 @@ main {
   color: #b30086;
   background: white;
 }
+li:hover {
+  color: #b30086;
+  background: white;
+}
 
 #myCanvas {
     margin: 0 auto;
