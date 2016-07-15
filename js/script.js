@@ -9,6 +9,7 @@ var hiddenWord;
 var updateHiddenWord;
 
 var selectedWord = document.getElementById("selected-word");
+var container = document.getElementById("container");
 var guesses = [];
 var keepScore = [];
 // set limit for user
@@ -101,7 +102,13 @@ function evaluateGuess() {
     } else if (lives == 1) {
       frame11();
     } else {
-      console.log("game over");
+      // game over view
+      container.innerHTML = "<h2>Game Over</h2><a id='play-again' href='#'>Play Again?</a>";
+      var playAgain = document.getElementById("play-again");
+      playAgain.onclick = function(e) {
+        e.preventDefault();
+        location.reload();
+      }
     }
   }
 }
