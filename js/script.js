@@ -31,14 +31,16 @@ function startGame(){
 
   // event listener for each specific alphabet button
   function getEventTarget(e) {
-      e = e || window.event;
-      return e.target || e.srcElement;
+      return e.target;
   }
+
+
 
   // user guesses a letter by clicking on an letter button
   alphabetBtns.onclick = function(event) {
       var target = getEventTarget(event);
       var guess = (target.innerHTML);
+      target.setAttribute("class", "active");
       guesses.push(guess);
       keepScore.push(guess);
 
@@ -68,7 +70,6 @@ function maskWord() {
 function evaluateGuess() {
   var guess = keepScore.pop();
   if (word.indexOf(guess) >-1) {
-    console.log("right!");
   } else {
     lives--;
     if (lives == 11) {
