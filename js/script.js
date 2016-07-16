@@ -7,7 +7,6 @@ var numberOfGuesses = 0;
 var word = "pizza";
 var hiddenWord;
 var updateHiddenWord;
-
 var selectedWord = document.getElementById("selected-word");
 var container = document.getElementById("container");
 var guesses = [];
@@ -55,7 +54,6 @@ function startGame(){
         evaluateGuess();
       }
     }
-
 }
 
 // replacing an index of a string with a specific character
@@ -81,6 +79,11 @@ function evaluateGuess() {
   if (word.indexOf(guess) >-1) {
   } else {
     lives--;
+    // if (lives >= 0) {
+    //   for (i = 0; i < drawing.length; i++) {
+    //     drawing[i];
+    //     console.log(drawing[i]);
+    //   }
     if (lives == 11) {
       frame1();
     } else if (lives == 10) {
