@@ -1,1 +1,1 @@
-var words = ["pizza", "bread", "snoring"];
+var words = ["agastopia", "bibble", "cabotage", "erinaceous", "firman", "gabelle", "jentacular", "lamprophony", "macrosmatic", "oxter", "quire", "ratoon", "winklepicker", "xertz", "kerfuffle", "hullaballoo", "cacophony", "ragamuffin", "whippersnapper", "gobbledygook", "gibberish", "discombobulate", "flummox", "curmudgeon", "lackadaisical", "woebegone", "lollygag"];
