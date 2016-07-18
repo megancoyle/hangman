@@ -1,6 +1,6 @@
 // store alphabet
 var alphabet = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// need to track this throughout game
+
 var numberOfGuesses = 0;
 // store word
 // var word = prompt("Player 1, pick a word!");
@@ -12,7 +12,7 @@ var container = document.getElementById("container");
 var guesses = [];
 var keepScore = [];
 // set limit for user
-var lives = 12;
+var lives = 11;
 var score = document.getElementById("score");
 
 startGame();
@@ -77,36 +77,10 @@ function maskWord() {
 function evaluateGuess() {
   var guess = keepScore.pop();
   if (word.indexOf(guess) >-1) {
-  } else {
+  } else if (lives <= 11 && lives > 0) {
     lives--;
-    // if (lives >= 0) {
-    //   for (i = 0; i < drawing.length; i++) {
-    //     drawing[i];
-    //     console.log(drawing[i]);
-    //   }
-    if (lives == 11) {
-      frame1();
-    } else if (lives == 10) {
-      frame2();
-    } else if (lives == 9) {
-      frame3();
-    } else if (lives == 8) {
-      frame4();
-    } else if (lives == 7) {
-      frame5();
-    } else if (lives == 6) {
-      frame6();
-    } else if (lives == 5) {
-      frame7();
-    } else if (lives == 4) {
-      frame8();
-    } else if (lives == 3) {
-      frame9();
-    } else if (lives == 2) {
-      frame10();
-    } else if (lives == 1) {
-      frame11();
-    } else {
+    drawHangman();
+  } else {
       // game over view
       container.innerHTML = "<h2>Game Over</h2><a id='play-again' href='#'>Play Again?</a>";
       var playAgain = document.getElementById("play-again");
@@ -116,7 +90,6 @@ function evaluateGuess() {
       }
     }
   }
-}
 
 // store a hint
 // if hint is used, an element is drawn
