@@ -101,7 +101,3 @@ function evaluateGuess() {
       }
     }
   }
-
-// store a hint
-// if hint is used, an element is drawn
-// way to compare word to guesses
