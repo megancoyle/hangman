@@ -70,6 +70,17 @@ function maskWord() {
     var regexp = new RegExp('[^' + guessString + ']','g');
     var display = word.replace(regexp, '_');
     selectedWord.innerHTML = display;
+      // if the right answer is guessed, let the user know
+      if (word == display) {
+        setTimeout(function(){
+          container.innerHTML = "<h2>You Got it Right!</h2><a id='play-again' href='#'>Play Again?</a>";
+          var playAgain = document.getElementById("play-again");
+          playAgain.onclick = function(e) {
+            e.preventDefault();
+            location.reload();
+          }
+        }, 900);
+      }
   }
 }
 
