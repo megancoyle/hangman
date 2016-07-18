@@ -84,23 +84,3 @@ function frame11() {
 }
 
 var drawing = [frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10, frame11];
-
-//
-// // Animate man
-// var animate = function () {
-// var drawMe = lives ;
-// drawArray[drawMe]();
-// }
-
-// draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
-//
-//   context.moveTo($pathFromx, $pathFromy);
-//   context.lineTo($pathTox, $pathToy);
-//   context.stroke();
-// }
-//
-//  frame1 = function() {
-//    draw (0, 150, 150, 150);
-//  };
-
-  // drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
