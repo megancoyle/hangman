@@ -3,8 +3,8 @@ var alphabet = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 
 var numberOfGuesses = 0;
 // store word
-// var word = prompt("Player 1, pick a word!");
-var word = "pizza";
+var shuffleWordsArray = shuffle(words);
+var word = shuffleWordsArray.pop();
 var hiddenWord;
 var updateHiddenWord;
 var selectedWord = document.getElementById("selected-word");
@@ -14,6 +14,21 @@ var keepScore = [];
 // set limit for user
 var lives = 11;
 var score = document.getElementById("score");
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
 
 startGame();
 
@@ -93,7 +108,9 @@ function evaluateGuess() {
     drawHangman();
   } else {
       // game over view
-      container.innerHTML = "<h2>Game Over</h2><a id='play-again' href='#'>Play Again?</a>";
+      container.innerHTML = "<h2>Game Over</h2><p>The correct word was: <span id='answer'></span></p><a id='play-again' href='#'>Play Again?</a>";
+      var answer = document.getElementById("answer");
+      answer.innerHTML = word;
       var playAgain = document.getElementById("play-again");
       playAgain.onclick = function(e) {
         e.preventDefault();
