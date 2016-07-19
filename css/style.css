@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
 body {
-  background-color: #b30086;
+  background-color: #006666;
   color: white;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -31,11 +31,11 @@ main {
 }
 
 .active {
-  color: #b30086;
+  color: #006666;
   background: white;
 }
 li:hover {
-  color: #b30086;
+  color: #006666;
   background: white;
 }
 
@@ -72,5 +72,5 @@ li:hover {
 #play-again:hover {
   background: white;
 	border: 1px solid white;
-	color: #b30086;
+	color: #006666;
 }
