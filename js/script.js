@@ -11,6 +11,7 @@ var selectedWord = document.getElementById("selected-word");
 var container = document.getElementById("container");
 var guesses = [];
 var keepScore = [];
+var gamesRight = 0;
 // set limit for user
 var lives = 11;
 var score = document.getElementById("score");
@@ -78,12 +79,12 @@ String.prototype.replaceAt = function(index, character) {
 
 function maskWord() {
   // for each guess, check if it matches letter in word
+  var guessString = guesses.join("");
+  var regexp = new RegExp('[^' + guessString + ']','g');
+  var display = word.replace(regexp, '_');
   for (i = 0; i < word.length; i++) {
     // turn guesses array into a string
     // update correct letter in masked word
-    var guessString = guesses.join("");
-    var regexp = new RegExp('[^' + guessString + ']','g');
-    var display = word.replace(regexp, '_');
     selectedWord.innerHTML = display;
       // if the right answer is guessed, let the user know
       if (word == display) {
@@ -96,6 +97,10 @@ function maskWord() {
           }
         }, 900);
       }
+  }
+  // keep sore of games that are right - need to add this to local storage
+  if (word == display) {
+    return gamesRight ++;
   }
 }
 
