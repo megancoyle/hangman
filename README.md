@@ -11,3 +11,9 @@ I decided to use the canvas element to create drawings that would render for eac
 * As a user, I be able to play again.
 
 <a href="https://megancoyle.github.io/hangman/">Play Hangman</a>
+
+![ScreenShot](hangman.jpg)
+
+## What's Next?
+* Refactor code
+* Clean up functions and variables
