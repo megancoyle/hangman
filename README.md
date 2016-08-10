@@ -10,9 +10,9 @@ I decided to use the canvas element to create drawings that would render for eac
 * As a user, I should know when the game is over by receiving a 'game over' message.
 * As a user, I be able to play again.
 
-<a href="https://megancoyle.github.io/hangman/">Play Hangman</a>
+[Play Hangman](https://megancoyle.github.io/hangman/)
 
-![ScreenShot](hangman.jpg)
+[![Hangman Screenshot](hangman.jpg)](https://megancoyle.github.io/hangman/)
 
 ## What's Next?
 * Refactor code
