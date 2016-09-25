@@ -8,7 +8,7 @@ I decided to use the canvas element to create drawings that would render for eac
 * As a user, I should be able to know when I guess correctly by seeing letters appear for my guess.
 * As a user, I should be able to press a button/link to select my letter choice.
 * As a user, I should know when the game is over by receiving a 'game over' message.
-* As a user, I be able to play again.
+* As a user, I should be able to play again.
 
 [Play Hangman](https://megancoyle.github.io/hangman/)
 

@@ -89,7 +89,9 @@ function maskWord() {
       // if the right answer is guessed, let the user know
       if (word == display) {
         setTimeout(function(){
-          container.innerHTML = "<h2>You Got it Right!</h2><a id='play-again' href='#'>Play Again?</a>";
+          container.innerHTML = "<h2>You Got it Right! The word was <span id='answer'></span></h2><a id='play-again' href='#'>Play Again?</a>";
+          var answer = document.getElementById("answer");
+          answer.innerHTML = word;
           var playAgain = document.getElementById("play-again");
           playAgain.onclick = function(e) {
             e.preventDefault();
