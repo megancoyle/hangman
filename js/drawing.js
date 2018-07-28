@@ -8,8 +8,8 @@ function draw(moveTox, moveToy, lineTox, lineToy) {
   var line = canvas.getContext("2d");
   line.moveTo(moveTox, moveToy);
   line.lineTo(lineTox, lineToy);
-  line.lineWidth=5;
-  line.strokeStyle="white";
+  line.lineWidth = 5;
+  line.strokeStyle = "white";
   line.stroke();
 }
 
@@ -36,7 +36,7 @@ function platform5() {
 function head() {
   var drawHead = canvas.getContext("2d");
   drawHead.beginPath();
-  drawHead.arc(150,70,30,0,2*Math.PI);
+  drawHead.arc(150, 70, 30, 0, 2 * Math.PI);
   drawHead.stroke();
 }
 
@@ -60,9 +60,21 @@ function rightLeg() {
   draw(200, 250, 150, 180);
 }
 
-var hangmanFrames = [rightLeg, leftLeg, rightArm, leftArm, torso, head, platform5, platform4, platform3, platform2, platform1];
+var hangmanFrames = [
+  rightLeg,
+  leftLeg,
+  rightArm,
+  leftArm,
+  torso,
+  head,
+  platform5,
+  platform4,
+  platform3,
+  platform2,
+  platform1
+];
 
-var drawHangman = function () {
-  var frame = lives ;
+var drawHangman = function() {
+  var frame = lives;
   hangmanFrames[frame]();
-}
+};
