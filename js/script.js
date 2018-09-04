@@ -1,3 +1,5 @@
+"use strict";
+
 var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 var alphabetBtns = document.getElementById("alphabet-buttons");
 var numberOfGuesses = 0;
@@ -19,14 +21,14 @@ function getEventTarget(e) {
 }
 
 function createButtons() {
-  for (i = 0; i < alphabet.length; i++) {
+  for (var i = 0; i < alphabet.length; i++) {
     alphabetBtns.innerHTML =
       alphabetBtns.innerHTML + "<li>" + alphabet[i] + "</li>";
   }
 }
 
 function createWordPlaceholder() {
-  for (i = 0; i < word.length; i++) {
+  for (var i = 0; i < word.length; i++) {
     selectedWord.innerHTML = selectedWord.innerHTML + "_";
   }
   hiddenWord = selectedWord.innerText;
@@ -91,7 +93,7 @@ function maskWord() {
   var guessString = guesses.join("");
   var regexp = new RegExp("[^" + guessString + "]", "g");
   var display = word.replace(regexp, "_");
-  for (i = 0; i < word.length; i++) {
+  for (var i = 0; i < word.length; i++) {
     // update correct letter in masked word
     selectedWord.innerHTML = display;
     // if the right answer is guessed, let the user know
